@@ -48,7 +48,7 @@ public class todoController {
     }
 
     @PostMapping("/todoMultipleAdd")
-    public String addMultipleTodo(@RequestBody List<Todo> content){
+    public String addSpeedTodo(@RequestBody List<Todo> content){
         List<Todo> savedTodoList=new ArrayList<>();
         todoRepo.saveAll(content).forEach(savedTodoList::add);
         return "Saved: todo ids - " + savedTodoList.stream().map(u->u.getContent()).collect(Collectors.toList());

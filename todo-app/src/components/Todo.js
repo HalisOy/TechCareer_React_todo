@@ -62,7 +62,8 @@ export const Todo = (todo) => {
               <button
                 className="btn btn-primary border-0 bg-danger col-1 p-2"
                 type="button"
-                onClick={()=> setIfEdit(false)}
+                onClick={()=> {setIfEdit(false);
+                setChangedTodo(todo.todo.content)}}
               >Cancel</button>
             </div>: 
             <span style={{ fontSize: "20px", textDecoration:isChecked?"line-through":"", color:isChecked?"red":""}}>{todo.todo.content}</span>
